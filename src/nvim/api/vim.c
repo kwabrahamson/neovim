@@ -1737,7 +1737,7 @@ static void write_msg(String message, bool to_err, bool writeln)
   if (c == NL) { \
     kv_push(*line_buf, NUL); \
     if (to_err) { \
-      emsg(line_buf->items); \
+      emsg_multiline(line_buf->items, true); \
     } else { \
       msg(line_buf->items, 0); \
     } \
